@@ -7,8 +7,10 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.Instant;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GitHubProjectService {
     private static final String OWNER = "Jxino";
+    private static final Duration CACHE_TTL = Duration.ofMinutes(10);
     private static final List<String> REPOSITORIES = List.of(
             "sentinel-ai",
             "phishing-shield",
@@ -48,30 +51,58 @@ public class GitHubProjectService {
             .connectTimeout(Duration.ofSeconds(5))
             .build();
     private final ObjectMapper objectMapper = new ObjectMapper();
+    private volatile List<ProjectDto> cachedProjects = List.of();
+    private volatile Instant cacheExpiresAt = Instant.EPOCH;
 
     public List<ProjectDto> findPortfolioProjects() {
-        return REPOSITORIES.stream()
-                .map(this::fetchRepository)
-                .toList();
-    }
+        Instant now = Instant.now();
+        if (!cachedProjects.isEmpty() && now.isBefore(cacheExpiresAt)) {
+            return cachedProjects;
+        }
 
-    private ProjectDto fetchRepository(String repoName) {
         try {
-            JsonNode repo = requestJson("https://api.github.com/repos/" + OWNER + "/" + repoName);
-            return new ProjectDto(
-                    repoName,
-                    PROJECT_TITLES.getOrDefault(repoName, toTitle(repo.path("name").asText(repoName))),
-                    repo.path("description").asText("AI and cybersecurity portfolio project"),
-                    PROJECT_IMAGES.get(repoName),
-                    readTopics(repo),
-                    repo.path("html_url").asText("https://github.com/" + OWNER + "/" + repoName)
-            );
+            Map<String, JsonNode> repositoriesByName = fetchRepositories();
+            List<ProjectDto> projects = REPOSITORIES.stream()
+                    .map(repoName -> toProject(repoName, repositoriesByName.get(repoName)))
+                    .toList();
+            cachedProjects = projects;
+            cacheExpiresAt = now.plus(CACHE_TTL);
+            return projects;
         } catch (IOException | InterruptedException e) {
             if (e instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
+
+            if (!cachedProjects.isEmpty()) {
+                return cachedProjects;
+            }
+
+            return REPOSITORIES.stream()
+                    .map(this::fallbackProject)
+                    .toList();
+        }
+    }
+
+    private Map<String, JsonNode> fetchRepositories() throws IOException, InterruptedException {
+        JsonNode response = requestJson("https://api.github.com/users/" + OWNER + "/repos?per_page=100&sort=updated");
+        Map<String, JsonNode> repositoriesByName = new HashMap<>();
+        response.forEach(repo -> repositoriesByName.put(repo.path("name").asText(), repo));
+        return repositoriesByName;
+    }
+
+    private ProjectDto toProject(String repoName, JsonNode repo) {
+        if (repo == null || repo.isMissingNode() || repo.isNull()) {
             return fallbackProject(repoName);
         }
+
+        return new ProjectDto(
+                repoName,
+                PROJECT_TITLES.getOrDefault(repoName, toTitle(repo.path("name").asText(repoName))),
+                repo.path("description").asText("AI and cybersecurity portfolio project"),
+                PROJECT_IMAGES.get(repoName),
+                readTopics(repo),
+                repo.path("html_url").asText("https://github.com/" + OWNER + "/" + repoName)
+        );
     }
 
     private JsonNode requestJson(String url) throws IOException, InterruptedException {
