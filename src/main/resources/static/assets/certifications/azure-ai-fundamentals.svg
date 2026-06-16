@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Microsoft Azure AI Fundamentals certificate mockup">
+  <rect width="1600" height="1000" fill="#ffffff"/>
+  <rect width="1600" height="220" fill="#17275c"/>
+  <rect y="780" width="1600" height="220" fill="#17275c"/>
+  <text x="85" y="105" font-family="Arial, sans-serif" font-size="64" fill="#ffffff">Microsoft Certified</text>
+  <text x="85" y="160" font-family="Arial, sans-serif" font-size="36" fill="#ffffff">Azure AI Fundamentals</text>
+  <text x="86" y="330" font-family="Arial, sans-serif" font-size="30" fill="#111111">JINHO KIM</text>
+  <text x="86" y="372" font-family="Arial, sans-serif" font-size="18" fill="#111111">has successfully completed the requirements of</text>
+  <text x="86" y="404" font-family="Arial, sans-serif" font-size="24" fill="#111111">Azure AI Fundamentals</text>
+  <text x="86" y="485" font-family="Arial, sans-serif" font-size="18" fill="#111111">Date issued: December 14th 2027</text>
+  <g transform="translate(86 650)">
+    <rect width="22" height="22" fill="#f25022"/><rect x="26" width="22" height="22" fill="#7fba00"/><rect y="26" width="22" height="22" fill="#00a4ef"/><rect x="26" y="26" width="22" height="22" fill="#ffb900"/>
+    <text x="62" y="38" font-family="Arial, sans-serif" font-size="28" fill="#555555">Microsoft</text>
+  </g>
+  <path d="M835 632c35-22 58-24 83-6 15 11 34 5 53-14" fill="none" stroke="#111111" stroke-width="3"/>
+  <text x="835" y="684" font-family="Arial, sans-serif" font-size="18" fill="#333333">Satya Nadella</text>
+  <text x="835" y="710" font-family="Arial, sans-serif" font-size="17" fill="#333333">Chief Executive Officer</text>
+  <g transform="translate(1220 520)">
+    <path d="M115 0l115 44v110c0 88-56 148-115 174C56 302 0 242 0 154V44z" fill="#2f3b49"/>
+    <path d="M115 38l78 30v78c0 60-36 100-78 120-42-20-78-60-78-120V68z" fill="#ffffff"/>
+    <rect x="40" y="72" width="150" height="64" rx="8" fill="#ffffff" stroke="#2f3b49" stroke-width="5"/>
+    <text x="115" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#2f3b49">Microsoft</text>
+    <text x="115" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#2f3b49">CERTIFIED</text>
+    <path d="M115 140l52 38v62l-52 38-52-38v-62z" fill="#2563eb"/>
+    <text x="115" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#ffffff">AI</text>
+  </g>
+  <text x="1420" y="905" text-anchor="end" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">verify.certmock.com: azure-ai-271214</text>
+</svg>

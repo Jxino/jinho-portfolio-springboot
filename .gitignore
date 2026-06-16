@@ -1,0 +1,7 @@
+target/
+build/
+.gradle/
+.idea/
+node_modules/
+.generated-github-repos/
+github-dummy-repos-*/

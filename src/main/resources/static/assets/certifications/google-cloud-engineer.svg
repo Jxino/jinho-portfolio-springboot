@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Google Cloud Associate Cloud Engineer certificate mockup">
+  <rect width="1600" height="1000" fill="#fbfdff"/>
+  <path d="M0 0h1600v1000H0z" fill="#ffffff"/>
+  <path d="M130 0c160 290 170 560 36 1000H0V0zM1120 0h480v1000h-260c-72-308-32-636-220-1000z" fill="#f6f8fb"/>
+  <rect x="36" y="36" width="1528" height="928" fill="none" stroke="#3f7bd8" stroke-width="16"/>
+  <rect x="58" y="58" width="1484" height="884" fill="none" stroke="#3f7bd8" stroke-width="3"/>
+  <text x="800" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" font-weight="500" fill="#5f6368">
+    <tspan fill="#4285f4">G</tspan><tspan fill="#ea4335">o</tspan><tspan fill="#fbbc05">o</tspan><tspan fill="#4285f4">g</tspan><tspan fill="#34a853">l</tspan><tspan fill="#ea4335">e</tspan><tspan fill="#5f6368"> Cloud</tspan>
+  </text>
+  <text x="800" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#37474f">This acknowledges that</text>
+  <text x="800" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="78" fill="#37474f">JINHO KIM</text>
+  <text x="800" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#37474f">has successfully completed all the requirements to be recognized as a</text>
+  <text x="800" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" letter-spacing="3" fill="#37474f">GOOGLE CLOUD CERTIFIED</text>
+  <text x="800" y="748" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" letter-spacing="4" fill="#37474f">ASSOCIATE CLOUD ENGINEER</text>
+  <path d="M650 846c52-28 94-34 132-18 34 14 70 12 118-16" fill="none" stroke="#111827" stroke-width="5"/>
+  <text x="800" y="905" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#5f6368">Thomas Kurian · CEO, Google Cloud</text>
+  <text x="92" y="808" font-family="Arial, sans-serif" font-size="26" fill="#5f6368">Series ID: 3141</text>
+  <text x="92" y="854" font-family="Arial, sans-serif" font-size="26" fill="#5f6368">Issue Date: May 27th 2028</text>
+  <text x="92" y="900" font-family="Arial, sans-serif" font-size="26" fill="#5f6368">Certification ID: GC-ACE-280527</text>
+</svg>

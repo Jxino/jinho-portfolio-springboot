@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jinho Kim | Portfolio</title>
+    
+    
+    <link rel="stylesheet" href="styles.css?v=20260610-font-system" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" href="assets/robert-plant-feather.svg?v=20260610" type="image/svg+xml">
+    <link rel="stylesheet" href="tailwind.css" />
+    <link rel="stylesheet" href="typography.css?v=20260610" />
+  </head>
+  <body>
+    <nav id="main-menu" class="site-menu" aria-label="Main navigation">
+      <a class="site-brand" href="#about" aria-label="Jinho Kim home" th:text="${profile.displayName}">JINHO KIM</a>
+      <div class="site-menu-items">
+        <a href="#about">About</a>
+        <a href="#journey">Education</a>
+        <a href="#tech-stack">Tech Stack</a>
+        <a href="#certifications">Certification</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </nav>
+
+    <div class="aurora-background" aria-hidden="true">
+      <span class="aurora-blob blob-one"></span>
+      <span class="aurora-blob blob-two"></span>
+      <span class="aurora-blob blob-three"></span>
+      <span class="aurora-blob blob-four"></span>
+    </div>
+    <div id="line-waves-container" aria-hidden="true"></div>
+
+    <!-- About Me Section -->
+<section id="about" class="bg-black text-white py-20 px-6">
+  <div class="simple-about">
+    <div class="simple-about-character" aria-hidden="true">
+      <img src="./assets/programmer-cat.png" alt="" />
+      <span class="character-shadow"></span>
+    </div>
+
+    <div class="simple-about-copy">
+      <h3><span>Welcome aboard!</span></h3>
+      <p
+        class="typing-introduction"
+        id="typing-introduction"
+        data-lines='["I am a philosopher who relentlessly digs beneath the surface to redefine problems and solve them at their roots."]'
+        aria-live="polite"
+      ></p>
+
+      <div class="simple-socials" aria-label="Social links">
+        <a th:href="${profile.instagramUrl}" href="https://www.instagram.com/jinoopage/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-social="instagram"><i class="fab fa-instagram"></i></a>
+        <a th:href="${profile.threadsUrl}" href="https://www.threads.net/@jinoopage" target="_blank" rel="noopener noreferrer" aria-label="Threads" data-social="threads"><i class="fa-brands fa-threads"></i></a>
+        <a th:href="${profile.gmailComposeUrl()}" href="https://mail.google.com/mail/?view=cm&fs=1&to=jinhoesperas@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail" data-social="gmail"><img src="./assets/gmail-logo.png" alt="" /></a>
+        <a th:href="${profile.githubUrl}" href="https://github.com/Jxino" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-social="github"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="code-reality-shell">
+    <div class="code-reality-heading">
+      <p>FROM LOGIC TO EXPERIENCE</p>
+      <h3>I turn structured code into useful products.</h3>
+    </div>
+
+    <div class="code-reality" id="code-reality" style="--reveal: 50%">
+      <div class="reality-panel">
+        <div class="browser-bar">
+          <span></span><span></span><span></span>
+          <p>portfolio.local/projects</p>
+        </div>
+        <div class="result-dashboard">
+          <aside><strong>JK</strong><i class="fas fa-house"></i><i class="fas fa-diagram-project"></i><i class="fas fa-chart-line"></i></aside>
+          <main>
+            <div class="result-topline"><div><small>SPRING PORTFOLIO</small><h4>Project Overview</h4></div><span>7 repositories</span></div>
+            <div class="result-stats"><div><b>07</b><small>Projects</small></div><div><b>05</b><small>Tech stacks</small></div><div><b>100%</b><small>API connected</small></div></div>
+            <div class="result-projects">
+              <article><span class="project-thumb blue"></span><h5>Campus Linker</h5><p>Spring Boot community platform</p></article>
+              <article><span class="project-thumb gold"></span><h5>PayFlow API</h5><p>Secure payment REST service</p></article>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <div class="code-panel">
+        <div class="code-window-bar"><span></span><span></span><span></span><p>ProjectController.java</p></div>
+        <pre aria-label="Spring Boot project API code"><code><span class="code-purple">@RestController</span>
+<span class="code-purple">@RequestMapping</span>(<span class="code-green">"/api/projects"</span>)
+<span class="code-blue">public class</span> ProjectController {
+
+  <span class="code-purple">@GetMapping</span>
+  <span class="code-blue">public</span> List&lt;Project&gt; findAll() {
+    <span class="code-blue">return</span> projectService
+      .findFeaturedProjects();
+  }
+}</code></pre>
+        <div class="code-console"><span>GET</span> /api/projects <b>200 OK</b></div>
+      </div>
+
+      <button class="reveal-handle" type="button" role="slider" aria-label="Drag to compare code and result" aria-valuemin="10" aria-valuemax="90" aria-valuenow="50">
+        <span>CODE</span><i class="fas fa-arrows-left-right"></i><span>RESULT</span>
+      </button>
+    </div>
+
+    <div class="code-reality-footer">
+      <span>JAVA 17</span><span>SPRING BOOT</span><span>REST API</span><span>GRADLE</span>
+      <div class="id-links" aria-label="Social links">
+        <a th:href="${profile.instagramUrl}" href="https://www.instagram.com/jinoopage/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a th:href="${profile.threadsUrl}" href="https://www.threads.net/@jinoopage" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+        <a th:href="${profile.gmailComposeUrl()}" href="https://mail.google.com/mail/?view=cm&fs=1&to=jinhoesperas@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a th:href="${profile.githubUrl}" href="https://github.com/Jxino" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="about-intro max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-12 px-4"
+  >
+    <div class="linux-mascot-wrap" aria-hidden="true">
+      <img src="./assets/linux-mascot.svg" alt="" class="linux-mascot" />
+    </div>
+
+    <!-- Text Content -->
+    <div class="about-message max-w-3xl" id="about-text">
+      <h2 class="about-greeting text-3xl md:text-5xl font-semibold leading-snug mb-5">
+        Hello, I'm <span>Jinho Kim</span>.
+      </h2>
+
+      <p class="about-statement text-lg md:text-2xl leading-relaxed mb-6">
+        I'd like to redefine problems and solve them.
+      </p>
+
+      <!-- Social Icons -->
+      <ul class="example-2">
+        <li class="icon-content">
+          <a
+            th:href="${profile.instagramUrl}"
+            href="https://www.instagram.com/jinoopage/"
+            aria-label="Instagram"
+            data-social="instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+              <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+              </svg>
+          </a>
+          <div class="tooltip">Instagram</div>
+        </li>
+        <li class="icon-content">
+          <a
+            th:href="${profile.threadsUrl}"
+            href="https://www.threads.net/@jinoopage"
+            aria-label="Threads"
+            data-social="threads"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <i class="fa-brands fa-threads"></i>
+          </a>
+          <div class="tooltip">Threads</div>
+        </li>
+        <li class="icon-content">
+          <a
+            th:href="${profile.gmailComposeUrl()}"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=jinhoesperas@gmail.com"
+            aria-label="Email"
+            data-social="email"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="240" height="240" viewBox="0 0 48 48">
+              <path fill="#e0e0e0" d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z"></path><path fill="#d9d9d9" d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z"></path><path fill="#eee" d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z"></path><path fill="#e0e0e0" d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z"></path><path fill="#ca3737" d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z"></path><path fill="#f5f5f5" d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z"></path><path fill="#e84f4b" d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z"></path>
+              </svg>
+          </a>
+          <div class="tooltip">Gmail</div>
+        </li>
+        <li class="icon-content">
+          <a
+            th:href="${profile.githubUrl}"
+            href="https://github.com/Jxino"
+            aria-label="GitHub"
+            data-social="github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="240" height="240" viewBox="0 0 48 48">
+              <circle cx="28" cy="28" r="18" fill="#9fa8da"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M35.054,38.836	C31.97,41.137,28.144,42.5,24,42.5C13.783,42.5,5.5,34.217,5.5,24c0-2.917,0.675-5.676,1.878-8.13"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13.869,8.518	C16.779,6.61,20.26,5.5,24,5.5c10.217,0,18.5,8.283,18.5,18.5c0,2.941-0.686,5.721-1.907,8.19"></path><path fill="#18193f" d="M34,23c0-1.574-0.576-3.038-1.558-4.275c0.442-1.368,0.93-3.771-0.242-5.648	c-2.251,0-3.73,1.545-4.436,2.514C26.602,15.213,25.333,15,24,15s-2.602,0.213-3.764,0.591c-0.706-0.969-2.184-2.514-4.436-2.514	c-1.328,2.126-0.526,4.45-0.073,5.43C14.638,19.788,14,21.334,14,23c0,3.78,3.281,6.94,7.686,7.776	c-1.309,0.673-2.287,1.896-2.587,3.38h-1.315c-1.297,0-1.801-0.526-2.502-1.415c-0.692-0.889-1.437-1.488-2.331-1.736	c-0.482-0.051-0.806,0.316-0.386,0.641c1.419,0.966,1.516,2.548,2.085,3.583C15.168,36.161,16.229,37,17.429,37H19v5.942h10v-7.806	c0-1.908-1.098-3.544-2.686-4.36C30.719,29.94,34,26.78,34,23z"></path>
+              </svg>
+          </a>
+          <div class="tooltip">GitHub</div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+<!-- JOURNEY SECTION -->
+<section id="journey" class="bg-black text-white py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-16 text-center text-[#1DCD9F]">Education</h2>
+    
+    <div class="relative">
+      <!-- Vertical Line -->
+      <div class="timeline-axis hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1"></div>
+
+      <!-- Timeline Card 1 - Right -->
+      <div class="relative mb-16 md:mb-24 md:flex justify-end">
+        <div class="timeline-logo-node hidden md:grid absolute left-1/2 transform -translate-x-1/2 top-1 z-10">
+          <img src="https://www.pcu.ac.kr/images/site/kor/content/8_ui_A32.png" alt="Paichai logo">
+        </div>
+        <div class="md:w-1/2"></div>
+        <div class="md:w-1/2 md:pl-10">
+          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card logo-card" style="--logo-url: url('https://www.pcu.ac.kr/images/site/kor/content/8_ui_A32.png');">
+            <h3 class="text-xl font-semibold text-[#1DCD9F]">Paichai Middle School</h3>
+            <span class="text-sm text-gray-400">March 2017 ~ February 2020</span>
+            <p class="mt-2 text-gray-300">Built a strong academic foundation, joined school activities, and developed early interest in communication and technology.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Card 2 - Left -->
+      <div class="relative mb-16 md:mb-24 md:flex justify-start">
+        <div class="timeline-logo-node hidden md:grid absolute left-1/2 transform -translate-x-1/2 top-1 z-10">
+          <img src="https://www.pcu.ac.kr/images/site/kor/content/8_ui_A32.png" alt="Paichai logo">
+        </div>
+        <div class="md:w-1/2 md:pr-10">
+          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card logo-card timeline-left-card" style="--logo-url: url('https://www.pcu.ac.kr/images/site/kor/content/8_ui_A32.png');">
+            <h3 class="text-xl font-semibold text-[#1DCD9F]">Paichai High School</h3>
+            <span class="text-sm text-gray-400">March 2020 ~ February 2023</span>
+            <p class="mt-2 text-gray-300">Completed core coursework, participated in team projects, and practiced problem solving through class assignments and club work.</p>
+          </div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+
+      <!-- Timeline Card 3 - Right -->
+      <div class="relative mb-16 md:mb-24 md:flex justify-end">
+        <div class="timeline-logo-node hidden md:grid absolute left-1/2 transform -translate-x-1/2 top-1 z-10">
+          <img src="./assets/ace-english-malta-mark.webp" alt="ACE English Malta logo">
+        </div>
+        <div class="md:w-1/2"></div>
+        <div class="md:w-1/2 md:pl-10">
+          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card logo-card" style="--logo-url: url('./assets/ace-english-malta-logo.png');">
+            <h3 class="text-xl font-semibold text-[#1DCD9F]">ACE English Malta</h3>
+            <span class="text-sm text-gray-400">August 2025 ~ Febuary 2026</span>
+            <p class="mt-2 text-gray-300 ace-description">Progressed from CEFR B2 to C1 through intensive English study, practical communication training, and daily immersion in an international environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Card 4 - Left -->
+      <div class="relative mb-16 md:mb-24 md:flex justify-start">
+        <div class="timeline-logo-node hidden md:grid absolute left-1/2 transform -translate-x-1/2 top-1 z-10">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/%EC%88%98%EC%9B%90%EB%8C%80%ED%95%99%EA%B5%90%EB%A1%9C%EA%B3%A0.png" alt="University of Suwon logo">
+        </div>
+        <div class="md:w-1/2 md:pr-10">
+          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card logo-card timeline-left-card" style="--logo-url: url('https://upload.wikimedia.org/wikipedia/commons/9/92/%EC%88%98%EC%9B%90%EB%8C%80%ED%95%99%EA%B5%90%EB%A1%9C%EA%B3%A0.png');">
+            <h3 class="text-xl font-semibold text-[#1DCD9F]">Suwon University</h3>
+            <span class="text-sm text-gray-400">March 2023 ~ now</span>
+            <p class="mt-2 text-gray-300">Majored in computer-related coursework, built web projects, and focused on backend development, databases, and software engineering.</p>
+          </div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK SECTION -->
+<section id="tech-stack" class="bg-black text-white py-20 px-6 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto flex flex-col gap-20">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-[#1DCD9F]">Tech Stack</h2>
+    </div>
+
+    <!-- AI & ML -->
+    <div class="flex md:flex-row flex-col gap-8 items-start" id="ai-ml">
+      <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
+        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#ai-ml').scrollIntoView({behavior: 'smooth'})">AI &amp; ML</div>
+      </div>
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Python</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" class="w-6 h-6" alt=""><span class="text-lg">PyTorch</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" class="w-6 h-6" alt=""><span class="text-lg">Hugging Face</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.simpleicons.org/langchain/1C3C3C" class="w-6 h-6" alt=""><span class="text-lg">LangChain</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" class="w-6 h-6" alt=""><span class="text-lg">OpenCV</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Scikit-learn</span></div>
+      </div>
+    </div>
+
+    <!-- SECURITY -->
+    <div class="flex md:flex-row flex-col gap-8 items-start" id="security">
+      <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
+        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#security').scrollIntoView({behavior: 'smooth'})">SECURITY</div>
+      </div>
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
+        <div class="flex items-center gap-2"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" class="w-6 h-6" alt=""><span class="text-lg">Burp Suite</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.simpleicons.org/wireshark/1679A7" class="w-6 h-6" alt=""><span class="text-lg">Wireshark</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.simpleicons.org/owasp/000000" class="w-6 h-6" alt=""><span class="text-lg">OWASP</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-shield-virus text-xl text-[#c99200]" aria-hidden="true"></i><span class="text-lg">YARA</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-shield-halved text-xl text-[#005571]" aria-hidden="true"></i><span class="text-lg">Wazuh</span></div>
+      </div>
+    </div>
+
+    <!-- BACKEND & DATA -->
+    <div class="flex md:flex-row flex-col gap-8 items-start" id="backend-data">
+      <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
+        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#backend-data').scrollIntoView({behavior: 'smooth'})">BACKEND &amp; DATA</div>
+      </div>
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" class="w-6 h-6" alt=""><span class="text-lg">FastAPI</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Apache Kafka</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="w-6 h-6" alt=""><span class="text-lg">PostgreSQL</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Redis</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Elasticsearch</span></div>
+      </div>
+    </div>
+
+    <!-- CLOUD & MLOPS -->
+    <div class="flex md:flex-row flex-col gap-8 items-start" id="cloud-mlops">
+      <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
+        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#cloud-mlops').scrollIntoView({behavior: 'smooth'})">CLOUD &amp; MLOPS</div>
+      </div>
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Docker</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Kubernetes</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" class="w-6 h-6" alt=""><span class="text-lg">Terraform</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-6 h-6" alt=""><span class="text-lg">AWS</span></div>
+        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" class="w-6 h-6" alt=""><span class="text-lg">GitHub Actions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION SECTION -->
+<section id="certifications" class="relative certification-section py-20 px-6 overflow-hidden">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold mb-4">Certification</h2>
+    <p class="text-lg">certificates from tech giants</p>
+  </div>
+
+  <div class="certification-carousel" aria-label="Certification carousel">
+    <button class="certification-nav certification-nav-prev" type="button" aria-label="Previous certificate">
+      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <div class="certification-viewport">
+      <div class="certification-track">
+        <article class="certification-item">
+          <img src="/assets/certifications/google-cloud-engineer.svg?v=cert-fix-2" alt="Google Cloud Certified Associate Cloud Engineer certificate">
+          <div class="certification-meta">
+            <h3>Google Cloud Certified Associate Cloud Engineer</h3>
+            <div class="certification-issuer">
+              <img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="" aria-hidden="true">
+              <p>Google Cloud</p>
+            </div>
+            <span>May 27th 2028</span>
+          </div>
+        </article>
+        <article class="certification-item">
+          <img src="/assets/certifications/aws-ai-practitioner.svg?v=cert-fix-2" alt="AWS Certified Solutions Architect Associate certificate">
+          <div class="certification-meta">
+            <h3>AWS Certified Solutions Architect - Associate</h3>
+            <div class="certification-issuer">
+              <span class="certification-logo-badge logo-aws">AWS</span>
+              <p>Amazon Web Services</p>
+            </div>
+            <span>August 3rd 2027</span>
+          </div>
+        </article>
+        <article class="certification-item">
+          <img src="/assets/certifications/azure-ai-fundamentals.svg?v=cert-fix-2" alt="Microsoft Certified Azure AI Fundamentals certificate">
+          <div class="certification-meta">
+            <h3>Microsoft Certified: Azure AI Fundamentals</h3>
+            <div class="certification-issuer">
+              <span class="certification-logo-badge logo-microsoft" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </span>
+              <p>Microsoft</p>
+            </div>
+            <span>December 14th 2027</span>
+          </div>
+        </article>
+        <article class="certification-item">
+          <img src="/assets/certifications/anthropic-ai-fluency.svg?v=cert-fix-2" alt="AI Fluency Framework and Foundations certificate">
+          <div class="certification-meta">
+            <h3>AI Fluency: Framework &amp; Foundations</h3>
+            <div class="certification-issuer">
+              <img src="https://cdn.simpleicons.org/anthropic/191919" alt="" aria-hidden="true">
+              <p>Anthropic</p>
+            </div>
+            <span>March 21st 2028</span>
+          </div>
+        </article>
+        <article class="certification-item">
+          <img src="/assets/certifications/nvidia-genai-llm.svg?v=cert-fix-2" alt="Jetson AI Specialist certificate">
+          <div class="certification-meta">
+            <h3>Jetson AI Specialist</h3>
+            <div class="certification-issuer">
+              <img src="https://cdn.simpleicons.org/nvidia/76B900" alt="" aria-hidden="true">
+              <p>NVIDIA Deep Learning Institute</p>
+            </div>
+            <span>September 6th 2028</span>
+          </div>
+        </article>
+      </div>
+    </div>
+    <button class="certification-nav certification-nav-next" type="button" aria-label="Next certificate">
+      <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="relative bg-black text-white py-20 px-6 overflow-hidden">
+
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles-projects" class="absolute top-0 left-0 w-full h-full z-0"></div>
+
+  <!-- ACTUAL PROJECT CONTENT -->
+  <div class="relative z-10">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">Projects</h2>
+      <p class="text-gray-300 text-lg">Some of the things I've built.</p>
+    </div>
+
+    <div id="projects-grid" class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/BookHive-Homepage.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async"/>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">BookHive- Share Your Thoughts</h3>
+          <p class="text-gray-700 mb-4">
+            A revolutionary platform for book lovers to connect, share, and discover new literary adventures through seamless borrowing and real-time communication.
+          </p>
+
+          <!-- Tech Stack Badges -->
+            <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-4 h-4" />
+              React
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="Tailwind CSS" class="w-4 h-4" />
+              MongoDB
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Markdown" class="w-4 h-4" />
+              Google Cloud
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://render.com/brand/render_1105076560.svg" alt="Netlify" class="w-4 h-4" />
+              Render
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg" alt="Vite" class="w-4 h-4" />
+              Socket.io
+            </span>
+            </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://book-hive-frontend.onrender.com/" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/Book-Hive" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD --> 
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/readme-generator-ss2.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async"/>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">GitHub Readme Generator</h3>
+          <p class="text-gray-700 mb-4">
+            Easily create and preview GitHub README files. Generate markdown and download or copy it for your projects.  
+            Simple, fast, and no sign-up needed.
+          </p>
+
+          <!-- Tech Stack Badges -->
+            <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-4 h-4" />
+              React
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-4 h-4" />
+              Tailwind CSS
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" alt="Markdown" class="w-4 h-4" />
+              Markdown
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg" alt="Netlify" class="w-4 h-4" />
+              Netlify
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg" alt="Vite" class="w-4 h-4" />
+              Vite
+            </span>
+            </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://readme-generator-github-abhijeetbhale.netlify.app/" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/Readme-Generator" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/ATS-Resume-SS.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">ATS Resume Checker</h3>
+          <p class="text-gray-700 mb-4">
+            An intelligent resume analysis tool that evaluates resumes against job descriptions using AI-powered semantic matching and provides actionable improvement suggestions.
+          </p>
+
+          <!-- Tech Stack Badges -->
+            <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-4 h-4" />
+              React
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-4 h-4" />
+              Tailwind CSS
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/openai-icon.svg" alt="Markdown" class="w-4 h-4" />
+              Open AI
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://render.com/brand/render_1105076560.svg" alt="Netlify" class="w-4 h-4" />
+              Render
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/framer.svg" alt="Vite" class="w-4 h-4" />
+              Framer
+            </span>
+            </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://ats-resume-checker-frontend.onrender.com" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/ATS-Resume-Checker" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/Boost_AI SS.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Boost AI</h3>
+          <p class="text-gray-700 mb-4">
+            An AI productivity tool using Google Gemini for content generation and task automation. Includes real-time chat and document analysis. Fast, simple, and secure.
+          </p>
+
+          <!-- Tech Stack Badges -->
+          <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-4 h-4" />
+              React
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-4 h-4" />
+              MongoDB
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-4 h-4" />
+              Node.js
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="w-4 h-4" />
+              Gemini
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="w-4 h-4" />
+              Express
+            </span>
+          </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://boost-ai-chat.vercel.app/" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/chatgpt-clone" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/pinterest-clone .png" alt="Finger Fiasco Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Pinterest Clone</h3>
+          <p class="text-gray-700 mb-4">
+            A visually rich and fully responsive Pinterest Clone crafted using React, React Router, and Tailwind CSS, offering a seamless browsing experience with smooth navigation and a modern UI design.
+          </p>
+
+          <!-- Tech Stack Badges -->
+          <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/react/react-original.svg" alt="React" class="w-4 h-4" />
+              React
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS" class="w-4 h-4" />
+              Tailwindcss
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original-wordmark.svg" alt="ReactRouter" class="w-4 h-4" />
+              ReactRouter
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-4 h-4" />
+              MongoDB
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-4 h-4" />
+                Node.js
+            </span>
+          </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://github.com/abhijeetBhale/Pinterest-Clone" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/Pinterest-Clone" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+
+       <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/finger-fiasco.png" alt="Finger Fiasco Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Finger Fiasco</h3>
+          <p class="text-gray-700 mb-4">
+            A fast-paced typing game to test and improve your typing speed. Built using HTML, CSS, JavaScript with custom game logic and animated UI.
+          </p>
+
+          <!-- Tech Stack Badges -->
+          <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/html5/html5-original.svg" alt="HTML" class="w-4 h-4" />
+              HTML
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/css3/css3-original.svg" alt="CSS" class="w-4 h-4" />
+              CSS
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-4 h-4" />
+              Bootstrap
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-4 h-4" />
+              JavaScript
+            </span>
+          </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://abhijeetbhale.github.io/FingerFiasco/home.html" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo
+            </a>
+            <a href="https://github.com/abhijeetbhale/FingerFiasco" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/Pizza-Store-Landing-Page.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Cheese Oven</h3>
+          <p class="text-gray-700 mb-4">
+            A vibrant and appetizing landing page for a pizza store, an interactive menu, online ordering, and special offers to entice customers.
+          </p>
+
+          <!-- Tech Stack Badges -->
+            <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="w-4 h-4" />
+              HTML
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="w-4 h-4" />
+              CSS
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-4 h-4" />
+              Bootstrap
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-4 h-4" />
+              JavaScript
+            </span>
+            </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://abhijeetbhale.github.io/Landing-Page-Project-Cheese-Oven/" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/Landing-Page-Project-Cheese-Oven" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+
+      <!-- SINGLE PROJECT CARD -->
+      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+        <img src="./assets/portfolio-ss.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" loading="lazy" decoding="async" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Portfolio Website</h3>
+          <p class="text-gray-700 mb-4">
+            My portfolio website featuring my projects, skills, and journey. Built with HTML, CSS, and JavaScript for a modern, interactive experience.
+          </p>
+
+          <!-- Tech Stack Badges -->
+          <div class="flex flex-wrap gap-3 mb-4">
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="w-4 h-4" />
+              HTML
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS" class="w-4 h-4" />
+              Tailwindcss
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-4 h-4" />
+              JavaScript
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="w-4 h-4" />
+              CSS
+            </span>
+            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
+              <img src="./assets/framer-logo.png" alt="Framer Motion" class="w-4 h-4" />
+              Framer Motion
+            </span>
+          </div>
+
+          <!-- Project Links -->
+          <div class="flex gap-4">
+            <a href="https://abhijeetbhale.github.io/Portfolio/" target="_blank"
+              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
+              Live Demo 
+            </a>
+            <a href="https://github.com/abhijeetBhale/Portfolio" target="_blank"
+              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
+              GitHub 
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /SINGLE PROJECT CARD -->
+    </div>
+  </div>
+</section>
+
+<footer class="developer-footer">
+  <div class="developer-footer__inner">
+    <p>STUDENT PORTFOLIO · SPRING BOOT MVC PROJECT</p>
+    <p>SUWON UNIVERSITY · CYBER SECURITY</p>
+    <p>BUILD STACK · JAVA 17 · GRADLE · GITHUB API · RESPONSIVE FRONTEND</p>
+    <p>MIT LICENSE · PORTFOLIO USE ONLY</p>
+    <p>COPYRIGHT &copy; 2026 JINHO KIM. ALL RIGHTS RESERVED.</p>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <!-- ParticleJs -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js?v=20260610-simple-about"></script>
+  </body>
+</html>

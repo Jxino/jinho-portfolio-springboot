@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="NVIDIA Jetson AI Specialist certificate mockup">
+  <rect width="1600" height="1000" fill="#ffffff"/>
+  <path d="M0 0h1600v185L0 340z" fill="#76b900"/>
+  <path d="M0 0h1600v45L0 235z" fill="#63a800" opacity=".42"/>
+  <text x="135" y="92" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffffff">NVIDIA</text>
+  <text x="135" y="135" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">DEEP LEARNING INSTITUTE</text>
+  <path d="M85 72c27-26 66-29 99-7-38 5-67 22-86 50 31-14 65-11 101 8-56 38-105 35-147-9 9-18 20-32 33-42z" fill="#ffffff" opacity=".92"/>
+  <text x="250" y="418" font-family="Arial, sans-serif" font-size="64" font-weight="400" fill="#76b900">JETSON AI SPECIALIST</text>
+  <text x="250" y="515" font-family="Arial, sans-serif" font-size="30" fill="#333333">This certificate is awarded to</text>
+  <text x="250" y="565" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#111111">JINHO KIM</text>
+  <text x="250" y="645" font-family="Arial, sans-serif" font-size="28" fill="#333333">In recognition of achievement of outstanding competence and</text>
+  <text x="250" y="690" font-family="Arial, sans-serif" font-size="28" fill="#333333">understanding of <tspan font-weight="800">Jetson AI Fundamentals</tspan> coursework.</text>
+  <line x1="250" y1="805" x2="620" y2="805" stroke="#111111" stroke-width="3"/>
+  <text x="250" y="850" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#111111">Craig Clawson</text>
+  <text x="250" y="885" font-family="Arial, sans-serif" font-size="22" fill="#333333">Director Deep Learning Institute, NVIDIA</text>
+  <text x="1245" y="852" text-anchor="end" font-family="Arial, sans-serif" font-size="20" fill="#333333">Year issued</text>
+  <text x="1315" y="852" font-family="Arial, sans-serif" font-size="24" fill="#111111">2028</text>
+  <text x="250" y="935" font-family="Arial, sans-serif" font-size="20" fill="#6b7280">Portfolio mock credential · Issued: September 6th 2028 · ID: INTL-JETSON-280906</text>
+</svg>

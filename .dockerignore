@@ -1,0 +1,9 @@
+.git
+.gradle
+.idea
+build
+node_modules
+scripts
+*.log
+README.md
+THIRD_PARTY_ASSETS.md

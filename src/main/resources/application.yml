@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: portfolio
+  web:
+    resources:
+      cache:
+        period: 0
+
+server:
+  port: ${PORT:8081}
