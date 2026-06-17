@@ -23,7 +23,7 @@ public class GitHubProjectService {
             "sentinel-ai",
             "phishing-shield",
             "deepfake-forensics",
-            "soc-copilot",
+            "jinho-portfolio-springboot",
             "zero-trust-gateway",
             "malware-sandbox",
             "privacy-guard-ai"
@@ -32,7 +32,7 @@ public class GitHubProjectService {
             "sentinel-ai", "/assets/projects/campus-linker.png",
             "phishing-shield", "/assets/projects/payflow-api.png",
             "deepfake-forensics", "/assets/projects/study-orbit.png",
-            "soc-copilot", "/assets/projects/log-insight.png",
+            "jinho-portfolio-springboot", "/assets/projects/portfolio-website-capture.png",
             "zero-trust-gateway", "/assets/projects/booknest.png",
             "malware-sandbox", "/assets/projects/health-mate.png",
             "privacy-guard-ai", "/assets/projects/market-pulse.png"
@@ -41,10 +41,18 @@ public class GitHubProjectService {
             "sentinel-ai", "Sentinel AI",
             "phishing-shield", "Phishing Shield",
             "deepfake-forensics", "Deepfake Forensics",
-            "soc-copilot", "SOC Copilot",
+            "jinho-portfolio-springboot", "Portfolio Website",
             "zero-trust-gateway", "Zero Trust Gateway",
             "malware-sandbox", "Malware Sandbox",
             "privacy-guard-ai", "Privacy Guard AI"
+    );
+    private static final Map<String, String> PROJECT_DESCRIPTIONS = Map.of(
+            "jinho-portfolio-springboot",
+            "Spring Boot와 Thymeleaf 기반으로 제작한 개인 포트폴리오 웹사이트입니다. Education, Certification, Tech Stack, GitHub Projects를 한 화면에서 보여주며, 프로젝트 섹션은 GitHub API와 연동해 동적으로 렌더링되도록 구성했습니다."
+    );
+    private static final Map<String, List<String>> PROJECT_TECH_STACKS = Map.of(
+            "jinho-portfolio-springboot",
+            List.of("Spring Boot", "Thymeleaf", "Java", "GSAP", "Render", "GitHub API")
     );
 
     private final HttpClient httpClient = HttpClient.newBuilder()
@@ -98,9 +106,12 @@ public class GitHubProjectService {
         return new ProjectDto(
                 repoName,
                 PROJECT_TITLES.getOrDefault(repoName, toTitle(repo.path("name").asText(repoName))),
-                repo.path("description").asText("AI and cybersecurity portfolio project"),
+                PROJECT_DESCRIPTIONS.getOrDefault(
+                        repoName,
+                        repo.path("description").asText("AI and cybersecurity portfolio project")
+                ),
                 PROJECT_IMAGES.get(repoName),
-                readTopics(repo),
+                PROJECT_TECH_STACKS.getOrDefault(repoName, readTopics(repo)),
                 repo.path("html_url").asText("https://github.com/" + OWNER + "/" + repoName)
         );
     }
@@ -129,9 +140,12 @@ public class GitHubProjectService {
         return new ProjectDto(
                 repoName,
                 PROJECT_TITLES.getOrDefault(repoName, toTitle(repoName)),
-                "GitHub API 응답을 가져오지 못했을 때 표시되는 AI·보안 포트폴리오 프로젝트입니다.",
+                PROJECT_DESCRIPTIONS.getOrDefault(
+                        repoName,
+                        "GitHub API 응답을 가져오지 못했을 때 표시되는 AI·보안 포트폴리오 프로젝트입니다."
+                ),
                 PROJECT_IMAGES.get(repoName),
-                List.of("Python", "Docker"),
+                PROJECT_TECH_STACKS.getOrDefault(repoName, List.of("Python", "Docker")),
                 "https://github.com/" + OWNER + "/" + repoName
         );
     }
